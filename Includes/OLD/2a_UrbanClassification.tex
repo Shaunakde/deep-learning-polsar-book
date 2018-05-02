@@ -1,0 +1,105 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Urban classification - Trento_2015 - 2_method.tex
+
+
+
+
+%\title{Deep Learning for Urban Classification}
+%\date{}
+%\author{SD, LB, AB, FB, SC}
+%\maketitle
+
+%\section{Introduction}
+
+Remotely sensed images acquired by space- or airborne sensors have revolutionized Earth observation allowing an unprecedented ability to image and observe large areas  with high temporal repetivity. 
+This has opened new avenues for the monitoring of dynamic Earth processes. Long term Earth observation missions have ensured data continuity allowing the characterization of anthropocentric processes and changes. Space borne optical sensors can deliver continuous global coverage, data availability, and high spectral information content. However, these sensors can not image during the night or inclement weather as they are dependent on the incident solar radiation for imaging. 
+
+The active properties of Synthetic Aperture Radar (SAR) data are increasingly exploited in monitoring applications. SAR sensors form an image by transmitting radar pulses  either in horizontal or vertical polarization and receiving  coherently~\cite{curlander1991synthetic}.  These sensors are not dependent on external sources for illumination. They have cloud cover penetrating capabilities thus operate without restriction of time and season.  Polarimetric SAR (PolSAR) imaging is an advancement made on single polarization SAR imaging~\cite{van1992nasa}. The polarization of the incident wave is controlled so that it is restricted alternatively to either $h$ or $v$ transmission. Similarly, reception is performed alternatively in $h$ or $v$ polarizations, so that for every imaged pixel, four combinations of polarization (i.e. $hh$, $hv$, $vh$, and $vv$) are captured. PolSAR imaging can capture more information about the physical properties of the target than single or dual polarization imaging, and consequently, it can lead to better target characterization and classification~\cite{Lee2001multipolclass}. However, it introduces unique challenges in the characterization of urban areas, which is increasingly becoming important for systematic monitoring.
+
+%Why urban classification - climate change
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+In the past decades, there has been a rapid inflation of population and the consequent expansion of urban areas. A high concentration of human population lives in urban areas and it becomes important to monitor the growth and expansion of these regions. In the case of natural calamities like floods, earthquakes, and tsunamis, it is important to derive information at the earliest to guide mitigation actions. In such cases, the availability of up-to-date  classification maps of urban areas, which can be referenced against post-event data, is crucial. The accurate classification of urban areas is the first step towards operational implementation of these applications.
+For tropical regions, many high population urban centers are shrouded by cloud cover for months at a time during the monsoon season. During this time, these areas are also the most susceptible to flooding.  Due to the dense cloud cover it becomes difficult to perform routine monitoring operations during this period using optical sensors. However, radar data are relatively unaffected by weather phenomena and can image on-demand irrespectively of conditions or illumination providing crucial information in these scenarios. 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+
+%challenges - not direct
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+SAR imaging introduces its own set of challenges to the classification problem. SAR images are acquired in side look geometry, which introduces geometric artifacts like the layover, foreshadow and shadow effects. This causes elevations in the imaged terrain (buildings, hills, and mountains) to suffer from certain distortions in the produced image making classification difficult. Moreover, SAR being a coherent imaging technique, suffers from the problem of speckle which further complicates the task of classification of SAR images. The speckle pattern is often non-Gaussian in distribution~\cite{jakeman1976model} making its suppression nontrivial. 
+% challenges direct goes here
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+Thus filtering and classification techniques that have been developed for Gaussian optical images can not be directly applied to SAR images. Various non Gaussian models have been proposed to represent SAR data~\cite{jakeman1976model}. To represent PolSAR data multivariate K distribution based models have been proposed~\cite{lee1994k}, ~\cite{doulgeris2010scale}. This was further extended by~\cite{freitas2005polarimetric} who used the $G^0$ distribution to model the speckle pattern. Non Gaussian model based classification techniques have been applied by~\cite{akbari2010non} to segregate glacier ice types to track changes in the glacier.  
+
+
+%LR
+The first attempt at the classification of PolSAR images was made in~\cite{kong1988identification}. The authors proposed a maximum likelihood based classification method for a PolSAR image based on a complex Gaussian distribution and showed that the addition of phase information from multiple channels improves the classification accuracy. Subsequently, a neural network classifier for SAR data was proposed in~\cite{pottier1991radar}, where a feed-forward network with a single hidden layer having sigmoidal activation functions was showed. It was observed that polarimetric and machine learning theory were complementary. However, at that time neural networks were considered computationally intensive and would not be widely adopted until subsequent advancements in computing technology~\cite{anderson1995introduction} were made.
+
+A popular classification scheme was proposed in~\cite{lee1994classification}, which uses a maximum likelihood classifier based on the Wishart distribution to perform terrain classification. Various studies have explored the effect of speckle and sensing frequency on the accuracy of this technique~\cite{lee2001quantitative}. An unsupervised scheme also based on the Wishart distribution was proposed in~\cite{lee2004unsupervised}. This has been extended by using several techniques for urban classification. In~\cite{dabboor2013unsupervised} the Chernoff  and in~\cite{dabboor2014jeffries} the Jeffries-Matsushita distance measures are used in conjunction with the complex Wishart distribution. 
+The complex Wishart distribution model for the covariance or coherency matrices is valid for homogeneous areas. %Textured areas are modeled by a Gamma distribution instead.  
+%For heterogeneous or
+However, in extremely heterogeneous regions, like urban areas, the Wishart assumption    is seldom true. Hence, in this case, it is desirable to use a non-parametric classification scheme. 
+%The proposed method does not make assumptions about the prior distribution of the data.
+
+
+Polarimetric scattering power decomposition parameters can serve as low-level features in classification~\cite{bhattacharya2015adaptive}. In~\cite{bhattacharya2012polarimetric} information theory is used to select a subset of the Touzi scattering decomposition parameters, which are then classified using a Support Vector Machine. A multi-decomposition parameter approach was adopted in~\cite{niu2013multi}, which used an SVM and a rule-based approach to urban land-cover classification. 
+Both supervised~\cite{da2008land} and unsupervised~\cite{lee2004unsupervised} schemes have been proposed that perform urban area segmentation based on decomposition parameters. 
+Despite the availability of several sophisticated methods, the selection of an appropriate decomposition approach for a scene is not a trivial task~\cite{chen2014modeling}. An alternative strategy for urban classification is to use the textural information  in the SAR images~\cite{1344157, 1183703}. However, in texture based schemes, the rich scattering information available from polarimetry is often not considered. 
+In the classification of urban structures is performed by using the Fisher distribution with Markovian segmentation for identification of ground, buildings, and vegetation. Other texture based schemes have also proved useful for urban segmentation~\cite{1183703}. 
+
+Interest in neural networks was renewed with improvement in technology. In~\cite{214928} a Karhunen-Loeve transform is used to extract features from a fully polarimetric dataset and a neural network is used to perform classification of the scene into urban, vegetation and terrain classes.   A study about the land-cover and soil type mapping capabilities using a probabilistic neural network was reported in~\cite{antropov2014land}  using L-Band space-borne data. Multi-temporal/multi-frequency datasets were exploited using a neural-statistical kernel in~\cite{1237401} for urban classification. An adaptive resonance theory neural network   was shown to perform computationally efficient classification of urban areas using polarimetric data. Hybrid approaches such as combination of neural networks and fuzzy logic were demonstrated to have good performance for SAR classification in~\cite{655339} and later specifically for identification of urban areas in~\cite{gamba2003increased}. A system for classification of multitemporal SAR images based on the integration of the SAR system physics and a radial basis function neural network architecture is proposed in ~\cite{4623140}. Another multi-temporal approach using single channel SAR datasets to monitor urban land cover in major Italian cities is proposed in~\cite{doi:10.1080/01431160118746}. 
+
+Hinton et. al. introduced the concept of deep learning in ~\cite{hinton2006fast}, which  found successful application in multiple areas~\cite{he2015delving, deng2013recent, glorot2011domain, mnih2013playing} establishing it as a new field of machine learning research. 
+The motivation lies in the capability of neural networks to break down complex learning problems into simpler representations. Deep Learning has been recently adopted by the remote sensing community for improved performance in several applications~\cite{han2015object,tang2015compressed,chen2014vehicle}. Multiple natural land cover classes were identified from a hyperspectral dataset in~\cite{chen2014deep}, while objects detection was performed in optical datasets in~\cite{han2015object} using deep learning techniques. Additional information is often added to the classification scheme from auxiliary data sources like optical and multi-spectral areas~\cite{zhu2012assessment,6202721}. Deep learning techniques are quickly gaining popularity to perform multi-sensor data fusion as well~\cite{zhang2015deep,li2008remote}. A deep learning based approach can simplify feature and classifier design, and allow the utilization of augmented datasets. This can help mitigate some of the challenges faced in the classification of urban areas from PolSAR data.  
+
+
+
+%In this work we adapt a deep learning based architecture to overcome certain challenges faced in classification of urban areas from polarimetric SAR data.
+
+
+%pixel based classification ka para
+%Pixel based classification is a common methodology adopted in the remote sensing community. Various approaches such as handcrafted features~\cite{benediktsson2005classification, zhang2006pixel, huang2012morphological}, discriminative feature learning~\cite{jia2013feature, zhang2012combining} and sophisticated classifier design~\cite{melgani2004classification} have been demonstrated in literature. A deep learning based approach can simplify feature and classifier design while achieving good performance.
+ 
+The classification of urban areas in PolSAR data-sets is especially challenging, because of the problems related to orientation of targets with respect to the radar line of sight.
+When targets that exhibit even bounce scattering are oriented away from the radar line of sight, the co-polarized return is reflected away from the sensor, while the cross-polarized return level remains the same~\cite{yamaguchi2011_y4r,7862796}. This makes such areas hard to distinguish from natural targets like forest and vegetation. This represents a major challenge for the classification algorithm. In~\cite{chen2014uniform} a polarimetric matrix rotation theory framework was proposed which develops a physically significant set of rotation angle parameters.  An approach based on the rotation of the coherency matrix was proposed in~\cite{yamaguchi2011four} to compensate for the over-estimation of volume in rotated urban areas. In~\cite{zou2016eigen}   a link is established between eigen-decomposition method and model based decomposition methods to also solve the overestimation of the volume scattering power problem. Another decomposition technique proposed in~\cite{7872383} uses a mapping to create an improved representation and further help improve target characterization. 
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+Various statistical parameters and understanding of the physics of scattering can be exploited in conjecture with appropriate machine learning techniques to alleviate some of these difficulties. In addition to the challenges of the sensing medium itself, the data volumes that will potentially be generated from current and future SAR programs, viz. NISAR and Sentinel, pose  additional predicaments. These missions are being designed with systematic global coverage capability that will lead to generation of a spatially and temporally dense collection of data. While this can lead to better understanding of of the Earth, leveraging this information is an additional challenge. Manual analysis of this kind of data-sets are infeasible and automated of semi-automated machine learning techniques which have a relatively low computation time are instrumental in extracting relevant information. 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+%motivation
+%Current classification algorithms documented in literature do not fully %leverage the physics of the polarimetric scattering phenomenon. 
+%As a result of this the classification accuracy of these techniques in %areas with targets rotated with respect to the radar line of sight is %limited. 
+Alternatively, some approaches utilize a separate class for identifying rotated targets, and then merge them with the non-rotated class as a post classification step.  However, this makes it mandatory to input training samples from rotated target areas, which may not always be possible. The generalization ability and autonomy of such an approach is therefore low.
+
+This might not always be available for a given scene and changes if the flight line of the platform is varied. The generalization ability and autonomy of such an approach is therefore low. 
+Sophisticated models have been developed to account for the rotation problem. While such approaches produce accurate results, they are computationally intensive making them infeasible for high data volumes.  
+In this work, a novel technique based on the target scattering properties along with a deep learning approach is proposed for urban area classification using PolSAR data. The properties of polarimetric scattering are used to generate synthetic targets, which simulate the effects of rotation about the radar line of sight in uniform angular steps.
+In general, polarization orientation angle shifts are observed in polatimetric SAR data which are induced by terrain slopes and complex scattering in urban areas. In turn, polarization orientation angle shifts can be induced by appropriate Euler rotations to form  synthetic targets. They can be suitably leveraged for better generalization in machine learning algorithms. The process is used to generate a database containing simulated urban targets. 
+The  synthetic urban target database is  used to train and extract features from a  sparse stacked auto-encoder. Thus, the information about the targets and rotation is accounted for in the classification scheme, which helps to discriminate rotated urban areas without requiring  explicit representation in the training stage. The advantage of using a deep learning based scheme is that, the network can be trained incrementally on a large volume of data, and subsequently used as a generalization for unseen data. This leads to a computationally efficient and fast classification phase. Given the commercial interests in deep learning at large scale, several GPU based specialized peripherals have been developed. These can be used to further speed up calculations and drastically reduce the training time over CPU bound computation. 
+
+
+%In this paper, the polarimetric SAR dataset is the low-level features.  Following this, a stacked auto-encoder is used to learn and extract high-level features in an unsupervised manner. Finally a multi-layer perceptron is used to perform the final classification in a supervised manner.
+
+% novelty
+%In this work, we use a novel technique to overcome some challenges faced in urban area classification. We use the physical properties of the polarimetric data to generate synthetic targets which simulate the effects of rotation about the radar line of sight. This generated synthetic urban target database is used to extract features using the stacked auto-encoder. Thus, the information about the target and it's rotation is accounted for in the classification scheme, which helps discriminate rotated urban areas, without having to exclusively specify these areas in the training stage. 
+
+% % moved
+%In this work, we propose and deep learning architecture and a technique based on the physics of scattering to overcome some challenges faced in urban area classification. 
+%A physics based target generation technique and a deep learning architecture for the pixel based classification of polarimetric SAR data is presented. 
+
+%%%%% PAPER SUMARY: MAYBE COMMENT %%%%%%%%%%%%% >>>
+%The urban synthetic target database generation technique applied to simulate the effects of rotation about the radar line of sight (Section~\ref{sec:stage1}).  This forms the mid-level features which then act as input to a stacked auto-encoder stage. The training of this stage is carefully monitored using metrics derived from information theory (viz. cross-entropy error) to prevent over-fitting. After the training phase, the extracted features are described and discussed in section~\ref{sec:stage2}. Finally, a multi-layer perceptron is used to perform the final supervised classification  using both the extracted features and estimated statistical parameters (Section~\ref{sec:stage3}). The overall stage-wise procedure allows an efficient tuning of hyper-parameters for optimizing the classification. The technique is demonstrated on PolSAR data acquired over the city of San Francisco by the UAVSAR and ALOS-2 platforms (Section~\ref{sec:stage4}). It is shown that  both rotated and non-rotated urban areas can be discriminated with an overall accuracy of about $91.3\%$.  Moreover, the proposed approach shows a better qualitative and quantitative performance when compared with contemporary techniques.%~(Section~\ref{sec:results1}). 
+%%%%% PAPER SUMARY: MAYBE COMMENT %%%%%%%%%%%%% <<<
+
+%moar menucard + expectation
+
+%dataset?
+
+
+                          
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

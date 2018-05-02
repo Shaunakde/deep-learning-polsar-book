@@ -1,0 +1,38 @@
+Overall Accuracy = (3193/3563)  89.6155%  
+Kappa Coefficient = 0.8541  
+  
+                  Ground Truth (Pixels)  
+    Class        Region #2    Region #1    Region #3    Region #4        Total  
+ Unclassified            0            0            0            0            0  
+     Class #1          340           49            0           14          403  
+     Class #2           39          707            0            0          746  
+     Class #4           24           13         1428           34         1499  
+     Class #3          192            5            0          718          915  
+        Total          595          774         1428          766         3563  
+  
+  
+                 Ground Truth (Percent)  
+    Class        Region #2    Region #1    Region #3    Region #4        Total  
+ Unclassified         0.00         0.00         0.00         0.00         0.00  
+     Class #1        57.14         6.33         0.00         1.83        11.31  
+     Class #2         6.55        91.34         0.00         0.00        20.94  
+     Class #4         4.03         1.68       100.00         4.44        42.07  
+     Class #3        32.27         0.65         0.00        93.73        25.68  
+        Total       100.00       100.00       100.00       100.00       100.00  
+  
+  
+  
+        Class   Commission     Omission          Commission            Omission  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+     Class #1        15.63        42.86              63/403             255/595  
+     Class #2         5.23         8.66              39/746              67/774  
+     Class #4         4.74         0.00             71/1499              0/1428  
+     Class #3        21.53         6.27             197/915              48/766  
+  
+  
+        Class   Prod. Acc.    User Acc.          Prod. Acc.           User Acc.  
+                 (Percent)    (Percent)            (Pixels)            (Pixels)  
+     Class #1        57.14        84.37             340/595             340/403  
+     Class #2        91.34        94.77             707/774             707/746  
+     Class #4       100.00        95.26           1428/1428           1428/1499  
+     Class #3        93.73        78.47             718/766             718/915  

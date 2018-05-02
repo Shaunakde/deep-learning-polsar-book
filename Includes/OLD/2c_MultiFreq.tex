@@ -1,0 +1,39 @@
+Polarimetric SAR (PolSAR) is an advanced imaging technique which coherently transmits and receives radar pulses in quadrature polarization. The multi-frequency polarized waves are susceptible to different structure, orientation and dielectric properties of the medium. Various PolSAR systems (viz. AIRSAR, EMISAR, and F-SAR) are capable of simultaneous multi-frequency full PolSAR data acquisition allowing for improved target characterization~\cite{499786}.  
+
+%%%%%%%%%%%%%
+% Early study
+%%%%%%%%%%%%%
+
+
+The use of single-frequency and single-polarization SAR data has limited success in land cover classification, even when temporal changes in the scattering are exploited, especially for agricultural applications~\cite{mcnairn2009contribution}.
+Techniques like hierarchical segmentation \cite{liu2016hierarchical}  and sketch maps in conjunction with adaptive Markov random fields~\cite{Junfei2016} have demonstrated to obtain an accurate classification for single frequency PolSAR data by leveraging contextual information while preserving edges.
+Early studies~\cite{baronti1995sar,ferrazzoli1997potential} have evaluated the effectiveness of multi-frequency PolSAR data acquisition for crop identification. Furthermore, an exhaustive comparison on the use of multi-frequency single, dual and fully 
+polarimetric acquisition was performed in~\cite{lee2001quantitative}, with the assessment of quantitative classification accuracy. It was found that the integration of polarimetric information from multiple bands leads to an improved classification performance.  Different strategies have been adopted to combine information from multi-frequency observations. An early approach for multi-frequency PolSAR classification is described in~\cite{499786}. It uses a dynamic neural network to combine the information from C-, L- and P-bands for classification.
+% %V3
+In~\cite{fukuda1999wavelet}, a wavelet-based textural feature set is derived, which is subsequently classified by a minimum distance classifier. However, it is indicated that a more sophisticated neural network technique might have a better performance. 
+%
+Parameters derived from the decomposition of multi-temporal L-band PolSAR data combined with single polarization C-band data was used in~\cite{mcnairn2009contribution} for crop classification. 
+An unsupervised classification technique using dual-frequency PolSAR datasets is introduced in~\cite{964969Famil2001}. 
+A $6\times6$ polarimetric coherency matrix is constructed to combine the multi-frequency information. The methodology uses an iterative algorithm based on a complex Wishart density function to classify the multi-frequency data.
+%
+Although it is effective for two frequencies, it is challenging to extend this technique to combine three or more bands, since the statistical parameter estimation equations must be derived. 
+%
+%It is a classification with the Wishart classifier on a 6x6 coherency matrix after an initial segmentation in the $H/A/\alpha$ space assuming that the coherency matrix in two frequencies is statistically dependent. 
+In~\cite{hoekman2003new}, a matrix reversible transformation approach is developed to combine multi-frequency PolSAR datasets into a representation with a simplified statistical description for classification. However, the approach requires extensive \emph{a-priori} knowledge of the datasets leading to a redundant representation.
+%%%%% V3
+In PolSAR data analysis, the second order statistics (coherency and covariance) can be expressed as a Sum of Kronecker Products (SKP) of two matrices~\cite{tebaldini2009algebraic}. In this, one matrix accounts for the scattering mechanism, while the other characterizes its spatial structures. SKP has been explored for the integration of multi-baseline PolInSAR datasets.
+
+
+
+
+The combination of multi-frequency information however causes a simultaneous increase in dimensionality of the feature set. In classical machine learning, an increase in dimensionality causes increased complexity for the learning technique. This is undesirable for efficient training which is usually referred to as the ``curse of dimensionality''~\cite{vapnik1998statistical}.  To this end, dimensionality reduction techniques like the principal component analysis, independent component analysis and non-negative matrix factorization are applied as a pre-processing step before training the learning algorithm which results in a loss of information. However, by exploiting sparse techniques, especially like the Deep Neural Network (ANN), it is possible to incorporate the information without the dimensionality reduction step~\cite{cichocki2015tensor}.  
+
+
+The combination of multi-frequency information causes a simultaneous increase in the dimensionality of the feature set. A classification task is often easier to solve in a higher dimensional space. 
+%
+%In this paper, a novel tensorization framework utilizing the Kronecker product for the combination of multi-frequency PolSAR data, and its subsequent classification using an Artificial Neural Network (ANN) is proposed. The tensorization leads to increased dimensionality, which is exploited by an ANN architecture to achieve improved classification performance over simple augmentation of data from multi-frequency bands. 
+%The ANN comprises of two stages where an unsupervised stochastic sampling Auto-Encoder (AE) learns an efficient representation and a supervised Feed Forward (FF) network performs classification.
+%The proposed framework is demonstrated for multi-frequency classification of an agricultural and a forested scene.
+%
+%The framework can be further extended for multi-temporal and multi-incidence datasets.
+Upcoming space-borne missions like~\cite{rosen2015nasa} are planned to have multi-frequency systematic PolSAR data collection capabilities, making it important to develop frameworks capable of leveraging the data.

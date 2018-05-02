@@ -1,0 +1,162 @@
+
+% \renewcommand\nomgroup[1]{%
+%   \item[\bfseries
+%   \ifstrequal{#1}{A}{Physics Constants}{%
+%   \ifstrequal{#1}{B}{Number Sets}{%
+%   \ifstrequal{#1}{C}{Other Symbols}{}}}%
+% ]}
+
+ \renewcommand\nomgroup[1]{%
+   \item[\bfseries
+   \ifstrequal{#1}{A}{List of Acronyms}{%
+   \ifstrequal{#1}{B}{List of Symbols}{%
+   \ifstrequal{#1}{C}{Number Sets}{}}}%
+ ]}
+
+%\newpage
+%\addcontentsline{toc}{chapter}{\nomname} 
+
+
+%%%%% Acronyms
+\nomenclature[A]{SAR}{Synthetic Aperture Radar}
+\nomenclature[A]{SM}{Scattering Mechanism}
+\nomenclature[A]{PF}{Polarization Fraction}
+\nomenclature[A]{PCC}{Polarimetric Channel Correlation}
+\nomenclature[A]{POC}{Polarimetric Orientation Correction}
+\nomenclature[A]{NASA}{National Aeronautics and Space Administration}
+\nomenclature[A]{JPL}{Jet Propulsion Laboratory}
+\nomenclature[A]{DLR}{German Aerospace Center}
+\nomenclature[A]{JAXA}{Japanese Aerospace Exploration Agency}
+\nomenclature[A]{SIR}{Shuttle Imaging Radar}
+\nomenclature[A]{ALOS}{Advanced Land Observation Satellite}
+\nomenclature[A]{PALSAR}{Phased Array type L-band Synthetic Aperture Radar}
+\nomenclature[A]{AVNIR}{Advanced Visible and Near Infrared Radiometer}
+\nomenclature[A]{PRISM}{Panchromatic Remote-sensing Instrument for Stereo Mapping}
+\nomenclature[A]{DEM}{Digital Elevation Model}
+\nomenclature[A]{DSM}{Digital Surface Model}
+\nomenclature[A]{UAV}{Uninhabited Aerial Vehicle}
+\nomenclature[A]{UAVSAR}{Uninhabited Aerial Vehicle Synthetic Aperture Radar}
+\nomenclature[A]{DoP}{Degree of Polarization}
+\nomenclature[A]{BSA}{Back Scatter Alignment}
+\nomenclature[A]{FSA}{Forward Scatter Alignment}
+\nomenclature[A]{NDSI}{Normalized Difference Snow Index}
+\nomenclature[A]{MODIS}{Moderate Resolution Imaging Spectroradiometer}
+\nomenclature[A]{SWIR}{Short Wave Infra Red}
+\nomenclature[A]{AIRSAR}{Airborne Synthetic Aperture Radar}
+\nomenclature[A]{ERS}{European Remote Sensing}
+\nomenclature[A]{MORA}{Multi-temporal Optimal Resolution Approach}
+\nomenclature[A]{TM}{Thematic Mapper}
+\nomenclature[A]{PCVE}{Polarimetric Contrast Variation Enhancement}
+\nomenclature[A]{QNN}{Quaternion Neural Network}
+\nomenclature[A]{CTD}{Coherent Target Decomposition}
+\nomenclature[A]{ICTD}{Incoherent Target Decomposition}
+\nomenclature[A]{LoS}{Line of Sight}
+\nomenclature[A]{LAI}{Leaf Area Index}
+\nomenclature[A]{SASE}{Snow and Avalanche Study Establishment}
+\nomenclature[A]{GPS}{Global Positioning System}
+\nomenclature[A]{TIRS}{Thermal Infrared Sensor}
+\nomenclature[A]{OLI}{Operational Land Imager}
+\nomenclature[A]{DN}{Digital Number}
+\nomenclature[A]{SRTM}{Shuttle Radar Topography Mission}
+\nomenclature[A]{DNN}{Deep Neural Network}
+\nomenclature[A]{POLSAR}{Polarimetric Synthetic Aperture Radar}
+\nomenclature[A]{InSAR}{Interferometric Synthetic Aperture Radar}
+\nomenclature[A]{NOAA}{National Oceanic and Atmospheric Administration}
+\nomenclature[A]{POLInSAR}{Polarimetric Interferometric Synthetic Aperture Radar}
+\nomenclature[A]{DL}{Deep Learning}
+\nomenclature[A]{RADAR}{Radio Detection And Ranging}
+\nomenclature[A]{ANN}{Artificial Neural Network}
+\nomenclature[A]{ML}{Machine Learning}
+\nomenclature[A]{RL}{Reinforcement Learning}
+\nomenclature[A]{IGBP-DIS}{International Geo-sphere-Biosphere Programme Data and Information System}
+\nomenclature[A]{ReLu}{Rectified Linear Unit}
+\nomenclature[A]{PReLu}{Parametric Rectified Linear Unit}
+\nomenclature[A]{SVM}{Support Vector Machine}
+\nomenclature[A]{SVM-RBF}{Support Vector Machine Radial Basis Function Kernel}
+\nomenclature[A]{RBF}{Restricted Boltzman Machine}
+\nomenclature[A]{CI}{Change Index}
+\nomenclature[A]{CD}{Change Detection}
+\nomenclature[A]{CPU}{Central Processing Unit}
+\nomenclature[A]{GPU}{Graphical Processing Unit}
+\nomenclature[A]{CUDA}{Compute Unified Device Architecture}
+\nomenclature[A]{CNN}{Convolutional Neural Network}
+\nomenclature[A]{RNN}{Recurrent Neural Network}
+\nomenclature[A]{RNN}{Recurrent Neural Network}
+\nomenclature[A]{MLP}{Multi Layer Perceptron}
+\nomenclature[A]{RNN}{Recurrent Neural Network}
+\nomenclature[A]{DBN}{Dynamic Bayesian Network}
+\nomenclature[A]{SKP}{Sum of Kronecker Products}
+\nomenclature[A]{OA}{Overall Accuracy}
+\nomenclature[A]{AE}{Auto-Encoder}
+%%%%%
+
+
+%%% List of Symbols
+
+\nomenclature[B]{$\delta$}{Relative phase difference between incident electric field and dipole polarization state}
+\nomenclature[B]{$E$}{Electric field}
+\nomenclature[B]{$P$}{Dipole polarization state}
+\nomenclature[B]{$E_{max}$}{Peak amplitude of the incident EM field}
+\nomenclature[B]{$P_{max}$}{Peak amplitude of the dipole polarization state}
+\nomenclature[B]{$\varepsilon$}{Dielectric constant of the target material}
+\nomenclature[B]{$\varepsilon_{s}$}{Static permittivity of the material}
+\nomenclature[B]{$\varepsilon_{0}$}{Permittivity of vacuum/free-space}
+\nomenclature[B]{$\delta{R}$}{Slant range resolution}
+\nomenclature[B]{$c$}{Speed of light}
+\nomenclature[B]{$\tau$}{Downwelling EM wave pulse width}
+\nomenclature[B]{$\theta_i$}{Angle of incidence of the downwelling EM wave}
+\nomenclature[B]{$\delta{{R}_{g}}$}{Ground range resolution}
+\nomenclature[B]{$R$}{Range length of the scatterer}
+\nomenclature[B]{$\lambda$}{Wavelength corresponding to carrier frequency of the transmitted signal}
+\nomenclature[B]{$L_A$}{Length of the antenna in the along track or azimuth direction}
+\nomenclature[B]{$z$}{Direction of propagation of the EM wave}
+\nomenclature[B]{$\delta_{x}$ \& $\delta_{y}$}{Phase shifts of EM wave in the orthogonal $x$ and $y$ plane}
+\nomenclature[B]{$E_{0x}$ \& $E_{0y}$}{Maximum amplitude of the sinusoids pulsating in orthogonal planes perpendicular to the axis of propagation}
+\nomenclature[B]{$g_{0}$}{Total power carried by the wave}
+\nomenclature[B]{$g_{1}$}{Power content in the linear horizontal and vertical polarized components}
+\nomenclature[B]{$g_{2}$}{power content in the linearly polarized components at tilt angles of $45^{o}$ and $135^{o}$}
+\nomenclature[B]{$g_{3}$}{power content in the left-handed and right-handed circular polarized components}
+\nomenclature[B]{$[J]$}{Wave covariance matrix}
+\nomenclature[B]{$H_{Wave}$}{Wave entropy}
+\nomenclature[B]{$A_{Wave}$}{Wave anisotropy}
+\nomenclature[B]{$[S]$}{Target scattering matrix}
+\nomenclature[B]{$\Omega$}{Target scattering vector in Lexicographic basis representation}
+\nomenclature[B]{$[C]$}{Polarimetric covariance matrix}
+\nomenclature[B]{$\kappa$}{Target scattering vector in Pauli basis representation}
+\nomenclature[B]{$[T]$}{Polarimetric coherency matrix}
+\nomenclature[B]{$[M]$}{Mueller matrix}
+\nomenclature[B]{$\{\Psi_{P}\}$}{Pauli basis matrix}
+\nomenclature[B]{$\{\Psi_{L}\}$}{Lexicographic basis matrix}
+\nomenclature[B]{$\mu_{1}$ \& $\mu_{2}$}{Scattering matrix coneigenvalues}
+\nomenclature[B]{$\Phi_{i}$}{Target phase angles}
+\nomenclature[B]{$\psi$, $\tau_{m}$, \& $m$}{Kennaugh-Huynen maximum polarization parameters: orientation angle, helicity, and maximum amplitude}
+\nomenclature[B]{$[G]$}{Graves power scattering matrix}
+\nomenclature[B]{$\lambda_{n}$}{Eigenvalues of the covariance/coherency matrix}
+\nomenclature[B]{$\lambda_{1}$, $\lambda_{2}$, \& $\lambda_{3}$}{Eigenvalues of the dominant, second dominant, and third dominant scattering mechanism}
+\nomenclature[B]{$\sigma_{\tau_{n}}$}{Variance of the helicity of the $n^{th}$ dominant scattering mechanism}
+\nomenclature[B]{$Span$}{Sum of the three eigenvalues. Quantifies the total power of the radar return}
+\nomenclature[B]{$P_{UP}$}{Percentage of total power that remains completely unpolarized}
+%%%%%%
+
+%%%%%% Number sets
+
+\nomenclature[C]{$\mathbb{R}$}{Real Numbers}
+\nomenclature[C]{$\mathbb{C}$}{Complex Numbers}
+\nomenclature[C]{$\mathbb{H}$}{Octonions}
+ 
+%\nomenclature[A, 02]{$c$}{Speed of light in a vacuum inertial system}
+%\nomenclature[A, 03]{$h$}{Plank Constant}
+%\nomenclature[A, 01]{$g$}{Gravitational Constant}
+%\nomenclature[B, 03]{$\mathbb{R}$}{Real Numbers}
+%\nomenclature[B, 02]{$\mathbb{C}$}{Complex Numbers}
+%\nomenclature[B, 01]{$\mathbb{H}$}{Octonions}
+%\nomenclature[C]{$V$}{Constant Volume}
+%\nomenclature[C]{$\rho$}{Friction Index}
+
+
+
+\clearpage
+\printnomenclature[2.3cm]
+\addcontentsline{toc}{chapter}{\nomname} 
+
+

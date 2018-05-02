@@ -1,0 +1,199 @@
+@book{vissers1992groundtruth,
+  title={Groundtruth Collection for the JPL-SAR and ERS-1 Campaign in Flevoland and the Veluwe (NL) 1991},
+  author={Vissers, M.A.M. and Sanden, J.J.},
+  isbn={9789054110712},
+  series={BCRS rapport},
+  year={1992},
+  publisher={Netherlands Remote Sensing Board (BCRS)}
+}
+
+@ARTICLE{499786, 
+author={K. S. Chen and W. P. Huang and D. H. Tsay and F. Amar}, 
+journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+title={Classification of multifrequency polarimetric SAR imagery using a dynamic learning neural network}, 
+year={1996}, 
+volume={34}, 
+number={3}, 
+pages={814-820}, 
+keywords={agriculture;backscatter;forestry;geophysical signal processing;geophysical techniques;geophysics computing;image classification;learning (artificial intelligence);neural nets;radar cross-sections;radar imaging;radar polarimetry;remote sensing by radar;synthetic aperture radar;C-band;Flevoland;L-band;P-band;SHF;UHF;agricultural area;crops;dynamic learning neural network;forest;geophysical measurement technique;grass;image classification;land surface;microwave backscatter;multifrequency polarimetric SAR imagery;multipolarization image;neural net;radar imaging;radar polarimetry;radar scattering;synthetic aperture radar;terrain mapping;terrain-cover;vegetation mapping;Backscatter;Crops;Data mining;Frequency;Microwave theory and techniques;Polarization;Radar imaging;Radar polarimetry;Soil;Testing}, 
+doi={10.1109/36.499786}, 
+ISSN={0196-2892}, 
+month={May},}
+
+@article{shi2016unsupervised,
+  title={Unsupervised polarimetric synthetic aperture radar image classification based on sketch map and adaptive Markov random field},
+  author={Shi, Junfei and Li, Lingling and Liu, Fang and Jiao, Licheng and Liu, Hongying and Yang, Shuyuan and Liu, Lu and Hao, Hongxia},
+  journal={Journal of Applied Remote Sensing},
+  volume={10},
+  number={2},
+  pages={025008--025008},
+  year={2016},
+  publisher={International Society for Optics and Photonics}
+}
+
+@ARTICLE{964969Famil2001,
+	author={L. Ferro-Famil and E. Pottier and Jong-Sen Lee},
+	journal={IEEE Transactions on Geoscience and Remote Sensing},
+	title={Unsupervised classification of multifrequency and fully polarimetric SAR images based on the H/A/Alpha-Wishart classifier},
+	year={2001},
+	volume={39},
+	number={11},
+	pages={2332-2342},
+	keywords={image classification;radar polarimetry;synthetic aperture radar;terrain mapping;AIRSAR sensor;C-band SAR images;France;H/A/Alpha-Wishart classifier;L-band SAR;Nezer Forest;P-band SAR images;classification scheme;coherency matrices;complex Wishart density function;conditional probability;cross-correlation matrix;decomposition theorem;dual frequency polarimetric SAR data sets;multifrequency SAR images;multivariate statistics;polarimetric SAR images;polarimetric coherency matrix;polarimetric cross-correlation information;radar polarimetry;scattering characteristics;synthetic aperture radar;terrain classification;unsupervised classification;Density functional theory;Frequency;Image sensors;Iterative algorithms;Matrix decomposition;NASA;Probability;Radar scattering;Remote sensing;Statistics},
+	doi={10.1109/36.964969},
+	ISSN={0196-2892},
+	month={Nov},}
+
+@article{tebaldini2009algebraic,
+  title={Algebraic synthesis of forest scenarios from multibaseline PolInSAR data},
+  author={Tebaldini, Stefano},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={47},
+  number={12},
+  pages={4132--4142},
+  year={2009},
+  publisher={IEEE}
+}
+
+@article{baronti1995sar,
+  title={SAR polarimetric features of agricultural areas},
+  author={Baronti, S and Del Frate, F and Ferrazzoli, P and Paloscia, S and Pampaloni, P and Schiavon, G},
+  journal={International Journal of Remote Sensing},
+  volume={16},
+  number={14},
+  pages={2639--2656},
+  year={1995},
+  publisher={Taylor \& Francis}
+}
+
+@article{fukuda1999wavelet,
+  title={A wavelet-based texture feature set applied to classification of multifrequency polarimetric SAR images},
+  author={Fukuda, Seisuke and Hirosawa, Haruto},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={37},
+  number={5},
+  pages={2282--2286},
+  year={1999},
+  publisher={IEEE}
+}
+
+
+
+
+
+@article{ferrazzoli1997potential,
+  title={The potential of multifrequency polarimetric SAR in assessing agricultural and arboreous biomass},
+  author={Ferrazzoli, Paolo and Paloscia, Simonetta and Pampaloni, Paolo and Schiavon, Giovanni and Sigismondi, Simone and Solimini, Domenico},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={35},
+  number={1},
+  pages={5--17},
+  year={1997},
+  publisher={IEEE}
+}
+
+@article{baghdadi2009potential,
+  title={Potential of SAR sensors TerraSAR-X, ASAR/ENVISAT and PALSAR/ALOS for monitoring sugarcane crops on Reunion Island},
+  author={Baghdadi, Nicolas and Boyer, Nathalie and Todoroff, Pierre and El Hajj, Mahmoud and B{\'e}gu{\'e}, Agn{\`e}s},
+  journal={Remote Sensing of Environment},
+  volume={113},
+  number={8},
+  pages={1724--1738},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@article{chakraborty2005rice,
+  title={Rice crop parameter retrieval using multi-temporal, multi-incidence angle Radarsat SAR data},
+  author={Chakraborty, M and Manjunath, KR and Panigrahy, S and Kundu, N and Parihar, JS},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={59},
+  number={5},
+  pages={310--322},
+  year={2005},
+  publisher={Elsevier}
+}
+
+@article{mcnairn2009contribution,
+  title={The contribution of ALOS PALSAR multipolarization and polarimetric data to crop classification},
+  author={McNairn, Heather and Shang, Jiali and Jiao, Xianfeng and Champagne, Catherine},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={47},
+  number={12},
+  pages={3981--3992},
+  year={2009},
+  publisher={IEEE}
+}
+
+@article{hoekman2003new,
+  title={A new polarimetric classification approach evaluated for agricultural crops},
+  author={Hoekman, Dirk H and Vissers, Martin AM},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={41},
+  number={12},
+  pages={2881--2889},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{lee2001quantitative,
+  title={Quantitative comparison of classification capability: Fully polarimetric versus dual and single-polarization SAR},
+  author={Lee, Jong-Sen and Grunes, Mitchell R and Pottier, Eric},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={39},
+  number={11},
+  pages={2343--2351},
+  year={2001},
+  publisher={IEEE}
+}
+
+@inproceedings{benz2001object,
+  title={Object based analysis of polarimetric SAR data in alpha-entropy-anisotropy decomposition using fuzzy classification by eCognition},
+  author={Benz, Ursula and Pottier, Eric},
+  booktitle={Geoscience and Remote Sensing Symposium, 2001. IGARSS'01. IEEE 2001 International},
+  volume={3},
+  pages={1427--1429},
+  year={2001},
+  organization={IEEE}
+}
+
+@article{li2012comparative,
+  title={A comparative analysis of ALOS PALSAR L-band and RADARSAT-2 C-band data for land-cover classification in a tropical moist region},
+  author={Li, Guiying and Lu, Dengsheng and Moran, Emilio and Dutra, Luciano and Batistella, Mateus},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={70},
+  pages={26--38},
+  year={2012},
+  publisher={Elsevier}
+}
+
+@inproceedings{baronti1993sar,
+  title={SAR polarimetric features of agricultural areas},
+  author={Baronti, S and Del Frate, F and Paloscia, S and Pampaloni, P and Schiavon, G and Solimini, D},
+  booktitle={Geoscience and Remote Sensing Symposium, 1993. IGARSS'93. Better Understanding of Earth Environment., International},
+  pages={27--29},
+  year={1993},
+  organization={IEEE}
+}
+
+
+
+@article{silva2009discrimination,
+  title={Discrimination of agricultural crops in a tropical semi-arid region of Brazil based on L-band polarimetric airborne SAR data},
+  author={Silva, Wagner F and Rudorff, Bernardo FT and Formaggio, Antonio R and Paradella, Waldir R and Mura, Jos{\'e} C},
+  journal={ISPRS Journal of Photogrammetry and Remote Sensing},
+  volume={64},
+  number={5},
+  pages={458--463},
+  year={2009},
+  publisher={Elsevier}
+}
+
+@inproceedings{rosen2015nasa,
+  title={The nasa-isro sar mission-an international space partnership for science and societal benefit},
+  author={Rosen, Paul A and Hensley, Scott and Shaffer, Scott and Veilleux, Louise and Chakraborty, Manab and Misra, Tapan and Bhan, Rakesh and Sagi, V Raju and Satish, R},
+  booktitle={Radar Conference (RadarCon), 2015 IEEE},
+  pages={1610--1613},
+  year={2015},
+  organization={IEEE}
+}
