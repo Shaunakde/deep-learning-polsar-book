@@ -1,16 +1,18 @@
-\documentclass[12pt, a4paper]{report}
-
+\documentclass[ 14pt,a4paper,twoside,chapterprefix=on,draft]{scrbook}
+%\setkomafont{disposition}{\normalfont\bfseries} % not sans serif
 
 \usepackage[centertags]{amsmath}
 \usepackage{amsfonts,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage[a4paper, total={6in, 8in}]{geometry}
-\usepackage{iitbcsretitle}
+%\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+%\usepackage{iitbcsretitle}
+
 \usepackage{setspace}
-\usepackage{textcomp}
+%\usepackage{textcomp}
 \usepackage{epstopdf}
-\usepackage{setspace}
+%\usepackage{setspace}
 \usepackage{sectsty}
 \usepackage[font=small,format=hang,labelfont=bf]{caption}
 \usepackage[font=small]{subcaption}
@@ -20,7 +22,7 @@
 
 \usepackage{breqn}
 \usepackage{siunitx}
-\renewcommand{\baselinestretch}{1.2} %line spacing
+%\renewcommand{\baselinestretch}{1.2} %line spacing
 %\chapterfont{\vspace{25mm}\centering}
 %\textwidth 6in
 % Title Page
@@ -40,7 +42,7 @@
 \usepackage{etoolbox}
 
 \usepackage{pifont}
-\usepackage{charter} %bookman
+%\usepackage{charter} %bookman
 %last import
 \usepackage{hyperref}
 
@@ -52,65 +54,75 @@
 
 \begin{document}
 
-\pagenumbering{roman}
-\pagestyle{plain}
-\def\title{Development of Auto-Encoder Based Methods for Synthetic Aperture Radar Image Analysis}
-\def\degree{Doctor of Philosophy}
-\def\who{Shaunak De (134316001)}
-\def\guide{Prof. Avik Bhattacharya}
-\def\when{15 February 2018}
+\title{Development of Auto-Encoder Based Methods for Synthetic Aperture Radar Image Analysis}
 
-\coverpage
-\dedicationpage
-\approvalpage
-\certificatepage
-\coursecertificatepage
-\quotationpage
-\copyrightpage
+\author{Shaunak De}
+\date{}
 
-\input{Includes/acknowledge}
+\maketitle  
 
-\begin{abstract}
+ 
 
-Radar remote sensing has made significant technological and scientific advances in the past few years. Sensors and constellations are able to acquire high resolution, polarimetric, wide swath data with high temporal repetivity. This has lead to an exponential increase in the volume of data available. With more temporally dense constellations planned in the near future, it is imperative that automated techniques based on machine learning algorithms be developed that are able to take advantage of all the acquired data and convert latent information to actionable knowledge. Advanced neural network techniques, collectively called ``deep leaning'' algorithms have demonstrated the ability to self-learn features from a data-volume, greatly reducing the need for time-consuming feature tuning, while delivering a robust performance in classification and regression tasks. 
+%\pagenumbering{roman}
+%\pagestyle{plain}
+%\def\title{Development of Auto-Encoder Based Methods for Synthetic Aperture Radar Image Analysis}
+%\def\degree{Doctor of Philosophy}
+%\def\who{Shaunak De (134316001)}
+%\def\guide{Prof. Avik Bhattacharya}
+%\def\when{15 February 2018}
 
-A subset of deep learning techniques are auto-encoders, which are able to summarize the information content of the presented data in either a compressed, or sparse representation, to be operated on by a subsequent learning algorithm for improved task performance. However, the availability of labeled training information in the domain of remote sensing is limited. This thesis develops a set of novel methodologies that incorporate physical scattering principles into a deep neural network architecture, especially auto-encoders, for the analysis of radar remote sensing images, in an effort to reduce the demand of training data, and build models more in tune with the laws of our physical world.
+%\coverpage
+%\dedicationpage
+%\approvalpage
+%\certificatepage
+%\coursecertificatepage
+%\quotationpage
+%\copyrightpage
 
-The four major research contributions are summarized as follows:
+%\input{Includes/acknowledge}
 
-First, an auto-encoder based novel classification methodology for urban areas has been developed.
-% 
-The classification of the urban regions in polarimetric SAR data, is a challenging task. Moreover, urban
-structures oriented away from the radar line of sight pose an additional complexity in the classification process. The characterization of such areas is essential for disaster relief and urban sprawl monitoring applications. In this work, a novel technique based on deep learning is proposed which leverages a synthetic target database for data augmentation. The polarimetric SAR dataset is rotated by uniform steps and collated to form a reference database.
+%%%% This section was the abstract in the thesis and may not be needed in the book!
+%\begin{abstract}
 %
-A stacked auto-encoder network is then used to transform the information in the augmented dataset into a compact representation. This significantly improves the generalization capabilities of the network. Finally, classification is performed by a multilayer perceptron network. The modular architecture allows for easy optimization of the hyper-parameters. The synthetic target database is created, and classification performance is evaluated on an L-band airborne UAVSAR dataset and L-Band space-borne ALOS-2 dataset acquired over San Francisco, USA. The proposed technique shows an overall accuracy of $91.3\%$. An improvement over state of the art techniques is achieved, especially in urban areas rotated away from the radar line of sight.
-
-%- Classiﬁcation of Urban Areas in Polarimetric Synthetic Aperture Radar Images:
-%The objective of this study was to be able to identify urban, non-urban and water land cover classes. A simulated urban target was generated to create synthetic urban scattering data, which was used to augment the training data. This improved the generalization ability of the network, improving performance over contemporary techniques.
-
-Subsequently, a semi-supervised urban change detection algorithm has been explored.
+%Radar remote sensing has made significant technological and scientific advances in the past few years. Sensors and constellations are able to acquire high resolution, polarimetric, wide swath data with high temporal repetivity. This has lead to an exponential increase in the volume of data available. With more temporally dense constellations planned in the near future, it is imperative that automated techniques based on machine learning algorithms be developed that are able to take advantage of all the acquired data and convert latent information to actionable knowledge. Advanced neural network techniques, collectively called ``deep leaning'' algorithms have demonstrated the ability to self-learn features from a data-volume, greatly reducing the need for time-consuming feature tuning, while delivering a robust performance in classification and regression tasks. 
 %
-Urban change detection is an important part of monitoring operations and disaster relief efforts. However, often sufficient ground truth data is not available to use traditional supervised machine learning techniques. In this paper, a novel deep learning based weakly-supervised framework for urban change detection using multi-temporal polarimetric SAR data is proposed. A modified unsupervised stacked auto-encoder stage is used to learn an efficient representation of the multi-temporal polarimetric information. Then a label aggregation is performed in the feature space before classification by a multi-layer perceptron. The proposed methodology is validated on an L-band UAVSAR dataset acquired over Los Angeles, USA and performs accurately and effectively with a low false alarm rate.
-
-%-Urban Change Detection Using a Semi-supervised Deep Learning Technique:
-%Often in case of a disaster like ﬂoods, a quick characterization of damage to urban areas is required. However, not much ground truth information is available making it diﬃcult to train machine learning models. In this work, an associative manifold growing technique was used to bolster the minimal training information available, and improve change detection performance.
-
-Next,
+%A subset of deep learning techniques are auto-encoders, which are able to summarize the information content of the presented data in either a compressed, or sparse representation, to be operated on by a subsequent learning algorithm for improved task performance. However, the availability of labeled training information in the domain of remote sensing is limited. This thesis develops a set of novel methodologies that incorporate physical scattering principles into a deep neural network architecture, especially auto-encoders, for the analysis of radar remote sensing images, in an effort to reduce the demand of training data, and build models more in tune with the laws of our physical world.
 %
-a novel tensorization framework is proposed which utilizes the Kronecker product to combine multi-frequency PolSAR data in conjunction with an artificial neural network for classification. The artificial neural network comprises of two stages, where an unsupervised stochastic sampling auto-encoder learns an efficient representation, and a supervised feed-forward network performs classification. The proposed framework is demonstrated using multi-frequency (C-, L-, P- band) datasets collected by the AIRSAR system. The classification performance of single, tensor products of dual, and triple band combinations are evaluated. It is observed that the classification accuracy of the tensor products outperforms single, as well as, the simple augmentation of the frequency bands.
-
-%-Combination of Multi-Frequency Radar Data for Crop Classiﬁcation: 
-%A novel tensorization approach was used to combine a multi-frequency dataset. Each frequency is sensitive to diﬀerent biophysical parameters of the agricultural crop. Thus, in combination, they are able to improve the ability of the algorithm to identify that crop.
-
-Finally,
+%The four major research contributions are summarized as follows:
 %
- a novel framework for snow cover mapping with Poincar\'e sphere parameters obtained from full-polarimetric SAR images in conjunction with an AE network is presented. The neural network comprises of two stages where an unsupervised stochastic sampling AE learns an efficient representation and a supervised feed-forward network performs classification. The proposed algorithm is validated using the Radarsat-2 (FQ-28) C-band full-polarimetric SAR datasets acquired over the Manali-Dhundi region of Himachal Pradesh, India. The results are explicitly confirmed with in-situ observatory measurements and compared with the NDSI-based snow cover maps derived from the LANDSAT-8 optical satellite images.
+%First, an auto-encoder based novel classification methodology for urban areas has been developed.
+%% 
+%The classification of the urban regions in polarimetric SAR data, is a challenging task. Moreover, urban
+%structures oriented away from the radar line of sight pose an additional complexity in the classification process. The characterization of such areas is essential for disaster relief and urban sprawl monitoring applications. In this work, a novel technique based on deep learning is proposed which leverages a synthetic target database for data augmentation. The polarimetric SAR dataset is rotated by uniform steps and collated to form a reference database.
+%%
+%A stacked auto-encoder network is then used to transform the information in the augmented dataset into a compact representation. This significantly improves the generalization capabilities of the network. Finally, classification is performed by a multilayer perceptron network. The modular architecture allows for easy optimization of the hyper-parameters. The synthetic target database is created, and classification performance is evaluated on an L-band airborne UAVSAR dataset and L-Band space-borne ALOS-2 dataset acquired over San Francisco, USA. The proposed technique shows an overall accuracy of $91.3\%$. An improvement over state of the art techniques is achieved, especially in urban areas rotated away from the radar line of sight.
+%
+%%- Classiﬁcation of Urban Areas in Polarimetric Synthetic Aperture Radar Images:
+%%The objective of this study was to be able to identify urban, non-urban and water land cover classes. A simulated urban target was generated to create synthetic urban scattering data, which was used to augment the training data. This improved the generalization ability of the network, improving performance over contemporary techniques.
+%
+%Subsequently, a semi-supervised urban change detection algorithm has been explored.
+%%
+%Urban change detection is an important part of monitoring operations and disaster relief efforts. However, often sufficient ground truth data is not available to use traditional supervised machine learning techniques. In this paper, a novel deep learning based weakly-supervised framework for urban change detection using multi-temporal polarimetric SAR data is proposed. A modified unsupervised stacked auto-encoder stage is used to learn an efficient representation of the multi-temporal polarimetric information. Then a label aggregation is performed in the feature space before classification by a multi-layer perceptron. The proposed methodology is validated on an L-band UAVSAR dataset acquired over Los Angeles, USA and performs accurately and effectively with a low false alarm rate.
+%
+%%-Urban Change Detection Using a Semi-supervised Deep Learning Technique:
+%%Often in case of a disaster like ﬂoods, a quick characterization of damage to urban areas is required. However, not much ground truth information is available making it diﬃcult to train machine learning models. In this work, an associative manifold growing technique was used to bolster the minimal training information available, and improve change detection performance.
+%
+%Next,
+%%
+%a novel tensorization framework is proposed which utilizes the Kronecker product to combine multi-frequency PolSAR data in conjunction with an artificial neural network for classification. The artificial neural network comprises of two stages, where an unsupervised stochastic sampling auto-encoder learns an efficient representation, and a supervised feed-forward network performs classification. The proposed framework is demonstrated using multi-frequency (C-, L-, P- band) datasets collected by the AIRSAR system. The classification performance of single, tensor products of dual, and triple band combinations are evaluated. It is observed that the classification accuracy of the tensor products outperforms single, as well as, the simple augmentation of the frequency bands.
+%
+%%-Combination of Multi-Frequency Radar Data for Crop Classiﬁcation: 
+%%A novel tensorization approach was used to combine a multi-frequency dataset. Each frequency is sensitive to diﬀerent biophysical parameters of the agricultural crop. Thus, in combination, they are able to improve the ability of the algorithm to identify that crop.
+%
+%Finally,
+%%
+% a novel framework for snow cover mapping with Poincar\'e sphere parameters obtained from full-polarimetric SAR images in conjunction with an AE network is presented. The neural network comprises of two stages where an unsupervised stochastic sampling AE learns an efficient representation and a supervised feed-forward network performs classification. The proposed algorithm is validated using the Radarsat-2 (FQ-28) C-band full-polarimetric SAR datasets acquired over the Manali-Dhundi region of Himachal Pradesh, India. The results are explicitly confirmed with in-situ observatory measurements and compared with the NDSI-based snow cover maps derived from the LANDSAT-8 optical satellite images.
+%
+%
+%
+%\end{abstract}
 
-
-
-\end{abstract}
-
-
+\frontmatter
 \tableofcontents
 
 %\clearpage
@@ -122,7 +134,7 @@ Finally,
 \addcontentsline{toc}{chapter}{\listfigurename}
 
 %Include Nomenclature and List of Symbols
-\input{Includes/frontmatter}
+%\input{Includes/frontmatter}
 
 
 
@@ -131,15 +143,15 @@ Finally,
 
 % Styling for the report
 %\setlength{\parskip}{2.5 em}
-\chapterfont{\vspace{15mm}\centering}
+%\chapterfont{\vspace{15mm}\centering}
 
-\onehalfspacing
-\newpage
-\pagenumbering{arabic}
+%\onehalfspacing
+%\newpage
+%\pagenumbering{arabic}
 
 
 % Text Matter
-
+\mainmatter  
 \input{Includes/1_Introduction}
 \input{Includes/2_LitReview} %OK
 
@@ -162,7 +174,8 @@ Finally,
 %\bibliographystyle{plain}
 %\printbibliography
 
-\clearpage
+%\clearpage
+\backmatter
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{ieeetr}
 %\bibliography{References/compact_classification_sar,References/deepLearning,References/polsar,References/IGRASS2015,References/ML,References/polsar_stats,References/remoteSensing,References/SARobjectrecognition,References/ml_books,References/bigdata,References/urban,References/uavsar}
