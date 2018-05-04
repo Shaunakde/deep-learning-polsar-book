@@ -1,4 +1,4 @@
-\documentclass[ 14pt,a4paper,twoside,chapterprefix=on,draft]{scrbook}
+\documentclass[fontsize=14pt,a4paper,DIV=9,twoside,chapterprefix=on,final]{scrbook}
 %\setkomafont{disposition}{\normalfont\bfseries} % not sans serif
 
 \usepackage[centertags]{amsmath}
@@ -7,13 +7,12 @@
 \usepackage{tabularx}
 %\usepackage[a4paper, total={6in, 8in}]{geometry}
 
-%\usepackage{iitbcsretitle}
 
 \usepackage{setspace}
 %\usepackage{textcomp}
 \usepackage{epstopdf}
 %\usepackage{setspace}
-\usepackage{sectsty}
+%\usepackage{sectsty}
 \usepackage[font=small,format=hang,labelfont=bf]{caption}
 \usepackage[font=small]{subcaption}
 %\usepackage{rotating}
@@ -28,23 +27,25 @@
 % Title Page
 
 %paragraph space
-\usepackage{parskip}
+%\usepackage{parskip}
 
 \usepackage{mdwlist}
 \usepackage{paralist}
 
 \usepackage{breqn}
 
-\usepackage{nomencl}
-\makenomenclature
-\makeindex
+%\usepackage{nomencl}
+%\makenomenclature
+%\makeindex
 
-\usepackage{etoolbox}
+%\usepackage{etoolbox}
 
 \usepackage{pifont}
-%\usepackage{charter} %bookman
+
+% FONT Selection
+\usepackage{bookman} %bookman %tgbonum %chater
 %last import
-\usepackage{hyperref}
+\usepackage[draft=false]{hyperref}
 
 
 %\usepackage[nomain,acronym,xindy,toc]{glossaries} % nomain, if you define glossaries in a file, and you use \include{INP-00-glossary}
@@ -54,11 +55,14 @@
 
 \begin{document}
 
-\title{Development of Auto-Encoder Based Methods for Synthetic Aperture Radar Image Analysis}
-
-\author{Shaunak De}
+\title{Deep Learning Based Methods for Polarimetric Synthetic Aperture Radar Image Analysis}
+\subtitle{A Physics First Approach to Machine Learning in Radar Earth Observation Applications}
+\author{Shaunak De \small{Ph.D.}}
 \date{}
+\publishers{2018}
 
+%\dedication{\small{To love, perseverance and hope,\\ and you my dearest cantaloupe. \\~ \vspace{1cm} \\~Dedicated to human curiosity,\\ and its relentless pursuit for answers.}}
+\dedication{ \small{To love, perseverance and hope,\\ and you my dearest cantaloupe. } }
 \maketitle  
 
  
@@ -76,7 +80,18 @@
 %\approvalpage
 %\certificatepage
 %\coursecertificatepage
-%\quotationpage
+\begin{titlepage}
+
+
+\vspace*{\fill}\small{
+Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.\\
+\hfill \textit{$\sim$ Antoine de Saint-Exup\'ery}}
+\vspace*{\fill}
+
+
+
+
+\end{titlepage}
 %\copyrightpage
 
 %\input{Includes/acknowledge}
@@ -123,6 +138,8 @@
 %\end{abstract}
 
 \frontmatter
+
+
 \tableofcontents
 
 %\clearpage
@@ -145,7 +162,7 @@
 %\setlength{\parskip}{2.5 em}
 %\chapterfont{\vspace{15mm}\centering}
 
-%\onehalfspacing
+\onehalfspacing
 %\newpage
 %\pagenumbering{arabic}
 
@@ -167,7 +184,7 @@
 \input{Includes/8_Conclusion}
 
 
-\input{Includes/endmatter}
+%\input{Includes/endmatter}
 
 
 %\bibliography{References/deepLearning,References/polsar}{}
@@ -180,7 +197,7 @@
 \bibliographystyle{ieeetr}
 %\bibliography{References/compact_classification_sar,References/deepLearning,References/polsar,References/IGRASS2015,References/ML,References/polsar_stats,References/remoteSensing,References/SARobjectrecognition,References/ml_books,References/bigdata,References/urban,References/uavsar}
 %{\footnotesize \singlespacing
-{\footnotesize \singlespacing
+{\small \singlespacing
 \bibliography{References/changeDet,References/compact_classification_sar,References/deepLearning,References/polsar,References/IGRASS2015,References/ML,References/polsar_stats,References/remoteSensing,References/SARobjectrecognition,References/ml_books,References/bigdata,References/urban,References/uavsar,References/ChgDet/deepLearning,References/Krn/agricultureSAR,References/thesis,References/Snow}}
 
 

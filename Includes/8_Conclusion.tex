@@ -1,4 +1,4 @@
-\chapter{Summary and Future Work}
+\chapter{Summary and Conclusions}
 
 A survey of developments in deep learning to remote-sensing and SAR classification techniques and a review of the state of the art has been presented. We have explored the application of deep learning to address the challenges associated with SAR classification, especially polarimetric SAR. The problem of orientation compensation for rotated targets was identified as a major source of misclassification of urban structures, which could be potentially be alleviated. We applied incremental rotations to the PolSAR data to generate synthetic data-sets. Subsequently, using an auto-encoder, we learn a sparse representation of the entire generated data-set. The feature space thus incorporates the complete target information, including the effect of rotation. These features are then applied to an MLP network which performs the final classification. The resultant classification is significantly better than the commonly used classification algorithms. The output of this, the urban classification can be used in the study of urban sprawl with temporal data. 
 
@@ -15,7 +15,7 @@ In the future, spatial inputs can be exploited to the AE to account for inter-re
 %In effect, it should be possible to learn the various effects caused by the undulations in terrain and compensate for it in the classification process. 
 Moreover, an optimal transmission polarization can be determined, which can help further improve separability. 
 
-In the future is it intended to expand the functionality of the developed techniques with the following additional concepts:
+Techniques detailed in this book can be expanded with the following additional concepts:
 
 \subsubsection*{Transfer Learning}
 To make the classification technique more generally applicable to large volumes of data, it is desirable that supervision is minimized in the process. This can be done by implementing a unsupervised technique or by transferring the knowledge acquired in the training of one image to the subsequent unseen images. The process of transferring the learning can usually result in a higher overall accuracy on the entire set of images, given that the statistics of the underlying data / scene vary only marginally. This is usually true for images acquired in the same season, using the same or compatible sensor and similar geographic region. Sensors like Sentinel have a set collection strategy that allows them to collect temporally and spatially consistent regular SAR datasets globally. This trend will be continued by future SAR missions like the RCM and NISAR, leading to a large volume of data compliant to the aforementioned criterion. A transfer learning based semi-supervised technique will greatly help extract information from the data. It is seen that the method shows a reasonable transfer of learning, and the performance can be improved by fine tuning.
